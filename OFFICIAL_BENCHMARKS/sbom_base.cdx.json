@@ -1,0 +1,38 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:d8aaf474-0867-5f4f-b824-3052dfcada7c",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-06T07:25:12Z",
+    "component": {
+      "type": "application",
+      "name": "ENERGY_SPARKS",
+      "version": "a1f60364d6ca",
+      "bom-ref": "pkg:generic/anticloud/ENERGY_SPARKS@a1f60364d6ca",
+      "purl": "pkg:generic/anticloud/ENERGY_SPARKS@a1f60364d6ca",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "a1f60364d6ca9adec8e61a328dfad74fc03e5529"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/energy-sparks/energy-sparks"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": []
+}

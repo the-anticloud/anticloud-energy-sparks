@@ -1,0 +1,812 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "ENERGY_SPARKS",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\ELECTRICITY_MANAGEMENT\\ENERGY_SPARKS\\UPSTREAM_CLONE",
+    "git": {
+      "head": "a1f60364d6ca9adec8e61a328dfad74fc03e5529",
+      "url": "https://github.com/energy-sparks/energy-sparks",
+      "branch": "master",
+      "committed_at": "2026-10-02T09:35:54+01:00"
+    }
+  },
+  "metrics": {
+    "files_total": 6432,
+    "source_files_scanned": 3717,
+    "lines_of_code": 260846,
+    "languages": {
+      ".rb": 3661,
+      ".erb": 1422,
+      ".rake": 434,
+      ".yml": 304,
+      ".png": 89,
+      ".scss": 87,
+      ".sql": 73,
+      ".js": 54,
+      ".csv": 53,
+      ".ruby": 43,
+      "(none)": 38,
+      ".json": 36,
+      ".jpg": 34,
+      ".svg": 32,
+      ".md": 14
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 0,
+    "unique": 0,
+    "by_ecosystem": {},
+    "list": []
+  },
+  "owasp_top10": {
+    "total_findings": 247,
+    "files_with_findings": 234,
+    "severity": {
+      "high": 40,
+      "medium": 8,
+      "low": 199
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 4,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "spec/services/mailchimp/audience_manager_spec.rb",
+            "line": 81,
+            "cwe": "CWE-327",
+            "snippet": "Digest::MD5.hexdigest(contact.email_address.downcase),"
+          },
+          {
+            "severity": "medium",
+            "file": "lib/data_feeds/solis_cloud_api.rb",
+            "line": 44,
+            "cwe": "CWE-327",
+            "snippet": "Base64.encode64(Digest::MD5.digest(body)).chomp"
+          },
+          {
+            "severity": "medium",
+            "file": "app/services/mailchimp/audience_manager.rb",
+            "line": 50,
+            "cwe": "CWE-327",
+            "snippet": "Digest::MD5.hexdigest(email_address.downcase),"
+          },
+          {
+            "severity": "medium",
+            "file": "app/components/comparison_table_component.rb",
+            "line": 207,
+            "cwe": "CWE-327",
+            "snippet": "@id ||= key || Digest::MD5.hexdigest(description)"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 41,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "spec/system/admin/issues_spec.rb",
+            "line": 275,
+            "cwe": "CWE-89",
+            "snippet": "select \"#{school_group_issues_admin.display_name} (2 issues)\", from: 'user_from'"
+          },
+          {
+            "severity": "medium",
+            "file": "lib/alerts/usage_during_current_holiday_base.rb",
+            "line": 230,
+            "cwe": "CWE-89",
+            "snippet": "cost_to_date: FormatUnit.format(:\u00a3, @holiday_usage_to_date_gbp)) +"
+          },
+          {
+            "severity": "high",
+            "file": "db/migrate/2019-phase-3-milestone-9/20190814134927_move_calendar_area_to_own_table.rb",
+            "line": 9,
+            "cwe": "CWE-89",
+            "snippet": "connection.execute \"SELECT setval('calendar_areas_id_seq', COALESCE((SELECT MAX(id)+1 FROM calendar_areas), 1), false);\""
+          },
+          {
+            "severity": "high",
+            "file": "db/migrate/2019-phase-3-milestone-6/20190510102007_move_dashboard_titles_to_own_object.rb",
+            "line": 28,
+            "cwe": "CWE-89",
+            "snippet": "\"SELECT #{dashboard}, content_generation_run_id, alert_id, alert_type_rating_content_version_id, id, created_at, updated_at FROM find_out_mores\""
+          },
+          {
+            "severity": "high",
+            "file": "app/services/charts/meter_selection.rb",
+            "line": 6,
+            "cwe": "CWE-89",
+            "snippet": "# Produces a list of objects that can be used to populate a select box using +options_from_collection_for_select+"
+          },
+          {
+            "severity": "high",
+            "file": "app/javascript/transport_surveys.js",
+            "line": 10,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/analysis.js",
+            "line": 136,
+            "cwe": "CWE-78",
+            "snippet": "var chartConfig = $(this).data('chart-config');"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/calendar_year_view.js",
+            "line": 35,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/checkboxes.js",
+            "line": 3,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/content.js",
+            "line": 3,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/date_pickers.js",
+            "line": 4,
+            "cwe": "CWE-78",
+            "snippet": "$(root).find('div.input-group.tempus-dominus-date').each(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/multi_select.js",
+            "line": 3,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/panel_switcher_component.js",
+            "line": 6,
+            "cwe": "CWE-78",
+            "snippet": "let component = $(this).closest('.panel-switcher-component');"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/school_search.js",
+            "line": 3,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/section_nav.js",
+            "line": 33,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(initializeSectionNav);"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/select.js",
+            "line": 3,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/tabbed_charts.js",
+            "line": 3,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/trix_customisations.js",
+            "line": 36,
+            "cwe": "CWE-78",
+            "snippet": "var parentWrapper = $(element).parents('.chart-list');"
+          },
+          {
+            "severity": "high",
+            "file": "app/assets/javascripts/usage_charts.js",
+            "line": 3,
+            "cwe": "CWE-78",
+            "snippet": "$(document).ready(function() {"
+          },
+          {
+            "severity": "high",
+            "file": "analytics/test_support/compare_content.rb",
+            "line": 321,
+            "cwe": "CWE-120",
+            "snippet": "sprintf('%-60.60s', type)"
+          },
+          {
+            "severity": "high",
+            "file": "analytics/test_support/parse_command_line.rb",
+            "line": 40,
+            "cwe": "CWE-120",
+            "snippet": "puts sprintf('  %-15.15s', arg[:arg]) + (arg[:args] == 0 ? '' : \" <#{arg.fetch(:help, 'arg')}>\")"
+          },
+          {
+            "severity": "high",
+            "file": "analytics/test_support/run_adult_dashboard.rb",
+            "line": 71,
+            "cwe": "CWE-120",
+            "snippet": "puts sprintf('%-30.30s: %3d differ %3d same', school_name, diff_count, no_diff_count)"
+          },
+          {
+            "severity": "high",
+            "file": "analytics/test_support/run_alerts.rb",
+            "line": 184,
+            "cwe": "CWE-120",
+            "snippet": "puts \"#{sprintf('%-50.50s', alert.class.name)} #{message}\" if print"
+          },
+          {
+            "severity": "high",
+            "file": "analytics/test_support/run_charts.rb",
+            "line": 90,
+            "cwe": "CWE-120",
+            "snippet": "puts sprintf('%-15.15s %s %-85.85s %-35.35s %-80.80s %-20.20s',"
+          },
+          {
+            "severity": "high",
+            "file": "analytics/test_support/school_factory.rb",
+            "line": 104,
+            "cwe": "CWE-120",
+            "snippet": "grouped_short_names = files.map { |f| sprintf('%-14.14s', f) }.each_slice(10).to_a"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 152,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "spec/system/activities_spec.rb",
+            "line": 216,
+            "cwe": "CWE-",
+            "snippet": "let(:audit) { create(:audit, :with_todos, school:) }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/activity_category_spec.rb",
+            "line": 28,
+            "cwe": "CWE-",
+            "snippet": "context toggle_feature: :todos do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/interventions_spec.rb",
+            "line": 275,
+            "cwe": "CWE-",
+            "snippet": "let!(:audit) { create(:audit, :with_todos, school:) }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/intervention_type_groups_spec.rb",
+            "line": 6,
+            "cwe": "CWE-",
+            "snippet": "let!(:programme_types) { create_list(:programme_type, 4, :with_todos) }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/programme_type_spec.rb",
+            "line": 6,
+            "cwe": "CWE-",
+            "snippet": "before { Flipper.enable(:todos) }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/schools/audits_spec.rb",
+            "line": 4,
+            "cwe": "CWE-",
+            "snippet": "before { Flipper.enable(:todos) }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/schools/recommendations_spec.rb",
+            "line": 63,
+            "cwe": "CWE-",
+            "snippet": "context 'with prompts', with_feature: :todos do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/schools/dashboard/prompts_spec.rb",
+            "line": 12,
+            "cwe": "CWE-",
+            "snippet": "let!(:audit)                          { create(:audit, :with_todos, school: school) }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/schools/advice_pages/long_term_spec.rb",
+            "line": 76,
+            "cwe": "CWE-",
+            "snippet": "data_available_from = reading_start_date + 89.days # TODO: not sure why this isn't 90 days"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/comparisons/configurable_period_spec.rb",
+            "line": 156,
+            "cwe": "CWE-",
+            "snippet": "# TODO: two [1]s?"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/admin/programme_type_spec.rb",
+            "line": 7,
+            "cwe": "CWE-",
+            "snippet": "context with_feature: :todos_parallel do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/context_extensions.rb",
+            "line": 5,
+            "cwe": "CWE-",
+            "snippet": "# context 'when recording an activity', toggle_feature: :todos"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/todos_helper.rb",
+            "line": 1,
+            "cwe": "CWE-",
+            "snippet": "module TodosHelper"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/shared_examples/recommendations_service.rb",
+            "line": 71,
+            "cwe": "CWE-",
+            "snippet": "RSpec.shared_examples 'a service making recommendations based on energy use' do |with_todos: false|"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/shared_examples/school_comparison_reports.rb",
+            "line": 58,
+            "cwe": "CWE-",
+            "snippet": "# TODO: seems like this might be brittle but want to ensure the test hasn't created any alerts"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/shared_examples/tasks.rb",
+            "line": 40,
+            "cwe": "CWE-",
+            "snippet": "activity_type = create(:programme_type, :with_todos, title: 'Other programme!').activity_type_tasks.first"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/shared_examples/todos.rb",
+            "line": 1,
+            "cwe": "CWE-",
+            "snippet": "RSpec.shared_examples 'a completable getting latest recording for todo' do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/shared_contexts/aggregated_meter_context.rb",
+            "line": 81,
+            "cwe": "CWE-",
+            "snippet": "# TODO: add temperatures"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/usage/annual_usage_benchmarks_service_spec.rb",
+            "line": 32,
+            "cwe": "CWE-",
+            "snippet": "# TODO: this could be moved to factory"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/tasks/recorder_spec.rb",
+            "line": 143,
+            "cwe": "CWE-",
+            "snippet": "context 'when recording a task that is not in todos' do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/recommendations/actions_spec.rb",
+            "line": 23,
+            "cwe": "CWE-",
+            "snippet": "context without_feature: :todos do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/recommendations/activities_spec.rb",
+            "line": 66,
+            "cwe": "CWE-",
+            "snippet": "context without_feature: :todos do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/programmes/creator_spec.rb",
+            "line": 7,
+            "cwe": "CWE-",
+            "snippet": "context with_feature: :todos do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/completables/progress_spec.rb",
+            "line": 17,
+            "cwe": "CWE-",
+            "snippet": "let!(:assignable) { create(:programme_type, :with_todos, title: 'Programme Type title', bonus_score: 12) }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/amr/analytics_unvalidated_amr_data_factory_spec.rb",
+            "line": 104,
+            "cwe": "CWE-",
+            "snippet": "# TODO: this SHOULD preserve nils without converting to 0.0, once the analytics can handle it"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "spec/system/school_onboarding_spec.rb",
+            "line": 45,
+            "cwe": "CWE-798",
+            "snippet": "password = 'testtesttest1'"
+          },
+          {
+            "severity": "high",
+            "file": "lib/data_feeds/rbee_solar_p_v.rb",
+            "line": 307,
+            "cwe": "CWE-798",
+            "snippet": "salted_password = \"#{password}{#{username}}\""
+          }
+        ]
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 46,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "spec/system/footer_spec.rb",
+            "line": 40,
+            "cwe": "CWE-319",
+            "snippet": "it { expect(block).to have_link 'Blog', href: 'http://blog.energysparks.uk' }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/home_spec.rb",
+            "line": 118,
+            "cwe": "CWE-319",
+            "snippet": "expect(page).to have_link('Cymraeg', href: 'http://cy.example.com/?foo=bar')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/i18n_spec.rb",
+            "line": 38,
+            "cwe": "CWE-319",
+            "snippet": "visit \"http://energysparks.test#{activity_type_path(activity_type)}\""
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/meter_management_spec.rb",
+            "line": 414,
+            "cwe": "CWE-319",
+            "snippet": "stub_request(:get, 'http://perse/meterhistory/v2/realtime-data?MPAN=1234567890123&fromDate=2023-10-10')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/password_reset_spec.rb",
+            "line": 30,
+            "cwe": "CWE-319",
+            "snippet": "expect(current_email.html_part.decoded).to include('http://localhost/users/password/edit?reset_password_token=')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/school_onboarding_spec.rb",
+            "line": 61,
+            "cwe": "CWE-319",
+            "snippet": "fill_in 'Website', with: 'http://oldfield.sch.uk'"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/schools/dashboard/navigation_spec.rb",
+            "line": 34,
+            "cwe": "CWE-319",
+            "snippet": "let(:partner)             { create(:partner, name: 'School Sponsor', url: 'http://example.org') }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/system/admin/manage_organisation_statements_spec.rb",
+            "line": 26,
+            "cwe": "CWE-319",
+            "snippet": "fill_in 'Efficiency report link', with: 'http://example.org/efficiency_report_link'"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/system.rb",
+            "line": 10,
+            "cwe": "CWE-319",
+            "snippet": "# this changes the default from http://www.example.com to http://example.com which works better with rack-test and"
+          },
+          {
+            "severity": "low",
+            "file": "spec/support/shared_examples/trix.rb",
+            "line": 107,
+            "cwe": "CWE-319",
+            "snippet": "expect(find('img[src=\"http://i3.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg\"]')).not_to be_nil"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/blog_service_spec.rb",
+            "line": 185,
+            "cwe": "CWE-319",
+            "snippet": "let(:custom_url) { 'http://custom.url' }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/schools/remover_spec.rb",
+            "line": 201,
+            "cwe": "CWE-319",
+            "snippet": "We would love to support your school again in future. You can view our current services and prices [here](http://localhost/product) or request to re-enrol your school by emailing ["
+          },
+          {
+            "severity": "low",
+            "file": "spec/services/amr/perse_upsert_spec.rb",
+            "line": 12,
+            "cwe": "CWE-319",
+            "snippet": "ClimateControl.modify PERSE_API_URL: 'http://example.com', PERSE_API_KEY: 'key' do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/models/activity_type_spec.rb",
+            "line": 241,
+            "cwe": "CWE-319",
+            "snippet": "let(:source)    { 'http://old.example.org' }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/mailers/bill_request_mailer_spec.rb",
+            "line": 29,
+            "cwe": "CWE-319",
+            "snippet": "expect(@email.html_part.decoded).to include('http://localhost/schools/test-school/consent_documents')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/mailers/energy_sparks_devise_mailer_spec.rb",
+            "line": 34,
+            "cwe": "CWE-319",
+            "snippet": "expect(@email.html_part.decoded).to include('http://localhost/users/confirmation?confirmation_token=')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/mailers/energy_tariffs_mailer_spec.rb",
+            "line": 26,
+            "cwe": "CWE-319",
+            "snippet": "expect(email.html_part.decoded).to include(\"http://cy.localhost/school_groups/#{school_group.slug}/energy_tariffs\")"
+          },
+          {
+            "severity": "low",
+            "file": "spec/mailers/issues_report_mailer_spec.rb",
+            "line": 124,
+            "cwe": "CWE-319",
+            "snippet": "'View' => \"http://localhost/admin/schools/#{issue.issueable.slug}/issues/#{issue.id}\","
+          },
+          {
+            "severity": "low",
+            "file": "spec/mailers/onboarding_mailer_spec.rb",
+            "line": 38,
+            "cwe": "CWE-319",
+            "snippet": "expect(body).to include('http://localhost/school_setup/')"
+          },
+          {
+            "severity": "low",
+            "file": "spec/lib/data_feeds/perse_api_spec.rb",
+            "line": 7,
+            "cwe": "CWE-319",
+            "snippet": "ClimateControl.modify PERSE_API_URL: 'http://example.com', PERSE_API_KEY: 'key' do"
+          },
+          {
+            "severity": "low",
+            "file": "spec/helpers/partners_helper.rb",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "let(:partner1)         { create(:partner, name: 'Egni', url: 'http://e.org') }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/factories/link_rewrites_factory.rb",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "source { 'http://old.example.org' }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/factories/programme_types_factory.rb",
+            "line": 6,
+            "cwe": "CWE-319",
+            "snippet": "sequence(:document_link)      { |n| \"http://example.org/document#{n}.pdf\" }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/factories/schools_factory.rb",
+            "line": 15,
+            "cwe": "CWE-319",
+            "snippet": "website         { \"http://#{name.camelize}.test\" }"
+          },
+          {
+            "severity": "low",
+            "file": "spec/controllers/analysis_page_finder_controller_spec.rb",
+            "line": 14,
+            "cwe": "CWE-319",
+            "snippet": "expect(response).to redirect_to(\"http://test.host/schools/#{school.slug}/advice/#{advice_page.key}/insights\")"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "config/routes.rb",
+            "line": 33,
+            "cwe": "CWE-601",
+            "snippet": "get 'user-guide-youtube', to: redirect('https://www.youtube.com/@energysparksuk') # this is a redirect so it can be used in the sitemap"
+          },
+          {
+            "severity": "medium",
+            "file": "app/javascript/tasks/recording_duplicate_warning.js",
+            "line": 28,
+            "cwe": "CWE-918",
+            "snippet": "fetch(url)"
+          }
+        ]
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 5,
+    "files_with_findings": 5,
+    "severity": {
+      "high": 4,
+      "medium": 1,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "app/assets/javascripts/trix_customisations.js",
+            "line": 95,
+            "cwe": "CWE-1336",
+            "snippet": "this.dialogsElement.insertAdjacentHTML(\"beforeend\", this.chartDialogTemplate(chart_list))"
+          }
+        ]
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 4,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "spec/system/admin/reports/mailchimp_status_spec.rb",
+            "line": 11,
+            "cwe": "CWE-862",
+            "snippet": "create(:school_admin, :skip_confirmed, confirmed_at: nil, mailchimp_status: :subscribed)"
+          },
+          {
+            "severity": "high",
+            "file": "spec/services/confirmation_reminder_spec.rb",
+            "line": 44,
+            "cwe": "CWE-862",
+            "snippet": "let!(:user) { create(role, :skip_confirmed) }"
+          },
+          {
+            "severity": "high",
+            "file": "spec/factories/users_factory.rb",
+            "line": 83,
+            "cwe": "CWE-862",
+            "snippet": "trait :skip_confirmed do"
+          },
+          {
+            "severity": "high",
+            "file": "app/controllers/onboarding/users_controller.rb",
+            "line": 30,
+            "cwe": "CWE-862",
+            "snippet": "@user.skip_confirmation_notification!"
+          }
+        ]
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:d8aaf474-0867-5f4f-b824-3052dfcada7c",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T07:25:12Z",
+      "component": {
+        "type": "application",
+        "name": "ENERGY_SPARKS",
+        "version": "a1f60364d6ca",
+        "bom-ref": "pkg:generic/anticloud/ENERGY_SPARKS@a1f60364d6ca",
+        "purl": "pkg:generic/anticloud/ENERGY_SPARKS@a1f60364d6ca",
+        "licenses": [
+          {
+            "license": {
+              "id": "MIT"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "a1f60364d6ca9adec8e61a328dfad74fc03e5529"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/energy-sparks/energy-sparks"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": []
+  },
+  "elapsed_seconds": 474.4
+}
